@@ -11,6 +11,7 @@ import applicationRoute from "./routes/application.route.js";
 dotenv.config({});
 
 const app = express();
+app.use(cors());
 
 // middleware
 app.use(express.json());
@@ -21,7 +22,6 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors());
 // app.use(cors({ origin: '*' })); 
 
 const PORT = process.env.PORT || 3000;
